@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gonçalo Silva — Portfolio</title>
+
+  <!-- Fonte: Poppins (semelhante à usada no site da Galeria Nuno Centeno) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --max-width:1200px;
+      --gutter:24px;
+      --accent:#ffffff;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Poppins", sans-serif;
+      color:#111827;
+      background:#ffffff;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.6;
+      padding-bottom:60px;
+    }
+
+    /* Header */
+    .site-header{
+      border-bottom:1px solid #e6e6e6;
+      background:#fff;
+      position:sticky;
+      top:0;
+      z-index:30;
+    }
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:22px var(--gutter);
+    }
+    .brand-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      font-size:22px;
+      font-weight:600;
+      letter-spacing:0.03em;
+      text-transform:uppercase;
+    }
+    .nav{
+      display:flex;
+      gap:20px;
+      align-items:center;
+      font-size:14px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+    }
+    .nav a{
+      color:inherit;
+      text-decoration:none;
+      transition:color .3s;
+    }
+    .nav a:hover{color:#000}
+
+    /* Hero */
+    .hero{
+      position:relative;
+      min-height:420px;
+      display:flex;
+      align-items:flex-end;
+      background-size:cover;
+      background-position:center;
+    }
+    .hero-overlay{
+      width:100%;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:48px var(--gutter);
+      color:var(--accent);
+      text-shadow:0 3px 10px rgba(0,0,0,0.35);
+    }
+    .hero .kicker{
+      font-size:14px;
+      opacity:0.9;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      font-weight:400;
+    }
+    .hero h1{
+      font-size:56px;
+      margin:8px 0;
+      font-weight:600;
+      letter-spacing:-0.01em;
+    }
+    .hero p{
+      font-size:15px;
+      opacity:0.9;
+      font-weight:300;
+    }
+
+    /* Gallery */
+    .section{
+      max-width:var(--max-width);
+      margin:40px auto;
+      padding:0 var(--gutter);
+    }
+    h2.section-title{
+      font-size:26px;
+      margin:8px 0 18px;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      font-weight:500;
+    }
+
+    .gallery{
+      display:grid;
+      gap:18px;
+      grid-template-columns:repeat(1,1fr);
+    }
+    @media (min-width:768px){
+      .gallery{grid-template-columns:repeat(2,1fr);}
+    }
+    @media (min-width:1024px){
+      .gallery{grid-template-columns:repeat(3,1fr);}
+    }
+
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      cursor:zoom-in;
+      background:#f3f3f3;
+      border-radius:6px;
+    }
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      transition:transform .5s ease;
+    }
+    .gallery-item:hover img{
+      transform:scale(1.05);
+    }
+
+    /* Lightbox */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,0.85);
+      z-index:100;
+      padding:24px;
+    }
+    .lightbox.open{display:flex}
+    .lightbox-inner{
+      max-width:1200px;
+      width:100%;
+      max-height:90vh;
+      position:relative;
+      border-radius:6px;
+      overflow:hidden;
+      background:#000;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .lightbox-img{
+      width:100%;
+      height:calc(90vh - 60px);
+      object-fit:contain;
+      background:#000;
+    }
+    .lightbox-meta{
+      padding:10px 14px;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.35));
+      color:#fff;
+      font-size:14px;
+    }
+    .close-btn{
+      position:absolute;
+      right:10px;
+      top:10px;
+      background:transparent;
+      border:0;
+      color:#fff;
+      font-size:28px;
+      cursor:pointer;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:40px;
+      border-top:1px solid #eee;
+      color:var(--muted);
+      padding:26px var(--gutter);
+      text-align:center;
+      font-size:14px;
+      letter-spacing:0.02em;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container brand-row">
+      <div class="brand">Gonçalo Silva</div>
+      <nav class="nav">
+        <a href="#works">Works</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=2000&auto=format&fit=crop');">
+    <div class="hero-overlay">
+      <div class="kicker">Current Exhibitions</div>
+      <h1>GONÇALO SILVA</h1>
+      <p>Portfolio Fotográfico - 2025</p>
+    </div>
+  </section>
+
+  <main id="works" class="section">
+    <h2 class="section-title">Portfolio — Seleção</h2>
+
+    <div class="gallery">
+     
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1518545471149-2a2f02b2fd58?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1518545471149-2a2f02b2fd58?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 1">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 2">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1507120878965-1e7b5c3a1f6f?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1507120878965-1e7b5c3a1f6f?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 3">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1495562569060-2eec283d3391?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1495562569060-2eec283d3391?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 4">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1504198458649-3128b932f49b?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1504198458649-3128b932f49b?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 5">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 6">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 7">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1444044205806-38f3ed106c10?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1444044205806-38f3ed106c10?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 8">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1442406964439-e46ab8eff7c4?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1442406964439-e46ab8eff7c4?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 9">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 10">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 11">
+      </div>
+      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=2000&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 12">
+      </div>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="close-btn" id="lb-close" aria-label="Fechar">×</button>
+      <img class="lightbox-img" id="lb-img" src="" alt="">
+      <div class="lightbox-meta">
+        <div id="lb-caption"></div>
+        <div style="opacity:0.85;font-size:13px">Press Esc para fechar</div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="about">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div><strong>Gonçalo Silva</strong><br>Portfólio Fotográfico</div>
+      <div>PORTO-2025</div>
+    </div>
+  </footer>
+
+  <script>
+    const items=document.querySelectorAll('.gallery-item');
+    const lightbox=document.getElementById('lightbox');
+    const lbImg=document.getElementById('lb-img');
+    const lbCaption=document.getElementById('lb-caption');
+    const lbClose=document.getElementById('lb-close');
+
+    function openLightbox(src,alt){
+      lbImg.src=src;lbImg.alt=alt||'';lbCaption.textContent=alt||'';
+      lightbox.classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lbImg.src='';document.body.style.overflow='';
+    }
+
+    items.forEach(i=>{
+      const img=i.querySelector('img');
+      const full=i.getAttribute('data-full')||img.src;
+      const alt=img.alt||'';
+      i.addEventListener('click',()=>openLightbox(full,alt));
+      i.addEventListener('keydown',e=>{if(e.key==='Enter')openLightbox(full,alt);});
+    });
+    lbClose.addEventListener('click',closeLightbox);
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+  </script>
+</body>
+</html>
