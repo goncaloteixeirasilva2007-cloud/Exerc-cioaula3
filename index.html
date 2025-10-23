@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Gonçalo Silva — Portfolio</title>
 
-  <!-- Fonte: Poppins (semelhante à usada no site da Galeria Nuno Centeno) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -71,19 +70,23 @@
     /* Hero */
     .hero{
       position:relative;
-      min-height:420px;
+      min-height:520px;
       display:flex;
       align-items:flex-end;
+      justify-content:center;
       background-size:cover;
-      background-position:center;
+      background-position:center 35%; /* mais centrado no rosto */
+      background-repeat:no-repeat;
+      border-bottom:1px solid #eee;
     }
     .hero-overlay{
       width:100%;
       max-width:var(--max-width);
       margin:0 auto;
-      padding:48px var(--gutter);
+      padding:64px var(--gutter);
       color:var(--accent);
       text-shadow:0 3px 10px rgba(0,0,0,0.35);
+      text-align:center;
     }
     .hero .kicker{
       font-size:14px;
@@ -93,31 +96,33 @@
       font-weight:400;
     }
     .hero h1{
-      font-size:56px;
+      font-size:64px;
       margin:8px 0;
       font-weight:600;
       letter-spacing:-0.01em;
     }
     .hero p{
-      font-size:15px;
+      font-size:16px;
       opacity:0.9;
       font-weight:300;
     }
 
-    /* Gallery */
+    /* Section */
     .section{
       max-width:var(--max-width);
-      margin:40px auto;
+      margin:60px auto;
       padding:0 var(--gutter);
     }
     h2.section-title{
       font-size:26px;
-      margin:8px 0 18px;
+      margin:8px 0 24px;
       text-transform:uppercase;
       letter-spacing:0.06em;
       font-weight:500;
+      text-align:center;
     }
 
+    /* Gallery normal (sem deslocamento) */
     .gallery{
       display:grid;
       gap:18px;
@@ -136,6 +141,7 @@
       cursor:zoom-in;
       background:#f3f3f3;
       border-radius:6px;
+      transition:transform .4s ease, box-shadow .4s ease;
     }
     .gallery-item img{
       width:100%;
@@ -144,8 +150,10 @@
       object-fit:cover;
       transition:transform .5s ease;
     }
-    .gallery-item:hover img{
-      transform:scale(1.05);
+    .gallery-item:hover img{transform:scale(1.05);}
+    .gallery-item:hover{
+      box-shadow:0 8px 20px rgba(0,0,0,0.12);
+      transform:translateY(-4px);
     }
 
     /* Lightbox */
@@ -184,7 +192,6 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.35));
       color:#fff;
       font-size:14px;
     }
@@ -201,7 +208,7 @@
 
     /* Footer */
     footer{
-      margin-top:40px;
+      margin-top:60px;
       border-top:1px solid #eee;
       color:var(--muted);
       padding:26px var(--gutter);
@@ -211,71 +218,50 @@
     }
   </style>
 </head>
+
 <body>
 
   <header class="site-header">
     <div class="container brand-row">
       <div class="brand">Gonçalo Silva</div>
       <nav class="nav">
-        <a href="#works">Works</a>
+        <a href="#works">Portfolio</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=2000&auto=format&fit=crop');">
+  <!-- Hero -->
+  <section class="hero" style="background-image:url('/img/IMG_7738.jpeg');">
     <div class="hero-overlay">
-      <div class="kicker">Current Exhibitions</div>
+      
       <h1>GONÇALO SILVA</h1>
-      <p>Portfolio Fotográfico - 2025</p>
+      <p>Portfólio Fotográfico — 2025</p>
     </div>
   </section>
 
+  <!-- Galeria -->
   <main id="works" class="section">
     <h2 class="section-title">Portfolio — Seleção</h2>
 
     <div class="gallery">
-     
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1518545471149-2a2f02b2fd58?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1518545471149-2a2f02b2fd58?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 1">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 2">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1507120878965-1e7b5c3a1f6f?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1507120878965-1e7b5c3a1f6f?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 3">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1495562569060-2eec283d3391?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1495562569060-2eec283d3391?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 4">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1504198458649-3128b932f49b?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1504198458649-3128b932f49b?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 5">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 6">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 7">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1444044205806-38f3ed106c10?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1444044205806-38f3ed106c10?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 8">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1442406964439-e46ab8eff7c4?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1442406964439-e46ab8eff7c4?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 9">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 10">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 11">
-      </div>
-      <div class="gallery-item" data-full="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=2000&auto=format&fit=crop">
-        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=800&auto=format&fit=crop" alt="Portfolio image 12">
-      </div>
+      <div class="gallery-item"><img src="/img/IMG_2020.jpeg" alt="MENORCA"></div>
+      <div class="gallery-item"><img src="/img/IMG_2035.jpeg" alt="MENORCA"></div>
+      <div class="gallery-item"><img src="/img/IMG_2040.jpeg" alt="MENORCA"></div>
+      <div class="gallery-item"><img src="/img/IMG_5540.jpeg" alt="GRAND CENTRAL TERMINAL NYC"></div>
+      <div class="gallery-item"><img src="/img/IMG_2042.jpeg" alt="MENORCA"></div>
+      <div class="gallery-item"><img src="/img/IMG_5574.jpeg" alt="SUMMIT ONE VANDERBILT NYC"></div>
+      <div class="gallery-item"><img src="/img/IMG_5660.jpeg" alt="CENTRAL PARK NYC"></div>
+      <div class="gallery-item"><img src="/img/IMG_5784.jpeg" alt="STATUE OF LIBERTY NYC"></div>
+      <div class="gallery-item"><img src="/img/IMG_5955.jpeg" alt="DUMBO VIEW NYC"></div>
+      <div class="gallery-item"><img src="/img/IMG_7556_jpg.jpeg" alt="ZANELE MUHOLI SERRALVES"></div>
+      <div class="gallery-item"><img src="/img/IMG_7566.jpeg" alt="SERRALVES"></div>
+      <div class="gallery-item"><img src="/img/IMG_7583.jpeg" alt="SERRALVES"></div>
     </div>
   </main>
 
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-inner">
       <button class="close-btn" id="lb-close" aria-label="Fechar">×</button>
@@ -287,13 +273,15 @@
     </div>
   </div>
 
+  <!-- Footer -->
   <footer id="about">
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
       <div><strong>Gonçalo Silva</strong><br>Portfólio Fotográfico</div>
-      <div>PORTO-2025</div>
+      <div>PORTO — 2025</div>
     </div>
   </footer>
 
+  <!-- Script -->
   <script>
     const items=document.querySelectorAll('.gallery-item');
     const lightbox=document.getElementById('lightbox');
@@ -313,10 +301,9 @@
 
     items.forEach(i=>{
       const img=i.querySelector('img');
-      const full=i.getAttribute('data-full')||img.src;
+      const src=img.src;
       const alt=img.alt||'';
-      i.addEventListener('click',()=>openLightbox(full,alt));
-      i.addEventListener('keydown',e=>{if(e.key==='Enter')openLightbox(full,alt);});
+      i.addEventListener('click',()=>openLightbox(src,alt));
     });
     lbClose.addEventListener('click',closeLightbox);
     lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
@@ -324,3 +311,4 @@
   </script>
 </body>
 </html>
+
