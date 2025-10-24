@@ -4,21 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contactos — Gonçalo Silva</title>
-
-    <!-- Fonte e Tailwind -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: { sans: ["Poppins", "sans-serif"] },
-          },
-        },
-      };
+      tailwind.config = { theme: { extend: { fontFamily: { sans: ["Poppins", "sans-serif"] } } } };
     </script>
   </head>
 
@@ -26,12 +15,7 @@
     <!-- Header -->
     <header class="sticky top-0 z-30 border-b border-gray-200 bg-white backdrop-blur">
       <div class="max-w-screen-xl mx-auto px-6 py-5 flex items-center justify-between">
-        <a
-          href="../index.html"
-          class="text-xl font-semibold tracking-wider uppercase hover:text-gray-600 transition-colors"
-        >
-          Gonçalo Silva
-        </a>
+        <a href="../index.html" class="text-xl font-semibold tracking-wider uppercase hover:text-gray-600 transition-colors">Gonçalo Silva</a>
         <nav class="flex items-center gap-5 text-sm uppercase tracking-widest text-gray-500">
           <a href="../index.html" class="hover:text-black transition-colors">Portfólio</a>
           <a href="index.html" class="text-black font-medium">Contactos</a>
@@ -39,68 +23,42 @@
       </div>
     </header>
 
-    <!-- Conteúdo principal -->
+    <!-- Conteúdo -->
     <main class="flex-grow flex flex-col items-center justify-center text-center px-6 py-20">
       <h1 class="text-4xl font-semibold tracking-tight mb-8 uppercase">Contactos</h1>
-
       <p class="text-gray-600 mb-12 max-w-md">
         Se quiseres entrar em contacto comigo para mais informações ou
         projetos fotográficos, usa qualquer um dos meios abaixo 👇
       </p>
 
-      <!-- IMAGENS CLICÁVEIS -->
       <div class="flex flex-col md:flex-row items-center justify-center gap-10">
         <!-- Instagram -->
-        <a
-          href="https://www.instagram.com/silvinha_28_/"
-          target="_blank"
-          class="flex flex-col items-center transition transform hover:scale-105"
-        >
+        <a href="https://www.instagram.com/silvinha_28_/" target="_blank" class="flex flex-col items-center transition transform hover:scale-105">
           <p class="uppercase text-sm text-gray-500 tracking-widest mb-2">Instagram</p>
           <div class="w-40 h-40 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center">
-            <img
-              src="../img/inta2.png"
-              alt="Instagram"
-              class="w-32 h-32 object-contain"
-            />
+            <img src="../img/inta2.png" alt="Instagram" class="w-32 h-32 object-contain"/>
           </div>
         </a>
-
         <!-- Telefone -->
-        <a
-          href="tel:+351912345678"
-          class="flex flex-col items-center transition transform hover:scale-105"
-        >
+        <a href="tel:+351912345678" class="flex flex-col items-center transition transform hover:scale-105">
           <p class="uppercase text-sm text-gray-500 tracking-widest mb-2">Telefone</p>
           <div class="w-40 h-40 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center">
-            <img
-              src="../img/tele.png"
-              alt="Telefone"
-              class="w-24 h-24 object-contain"
-            />
+            <img src="../img/tele.png" alt="Telefone" class="w-24 h-24 object-contain"/>
           </div>
         </a>
-
         <!-- Email -->
-        <a
-          href="mailto:goncalo.silva@email.com"
-          class="flex flex-col items-center transition transform hover:scale-105"
-        >
+        <a href="mailto:goncalo.silva@email.com" class="flex flex-col items-center transition transform hover:scale-105">
           <p class="uppercase text-sm text-gray-500 tracking-widest mb-2">Email</p>
           <div class="w-40 h-40 rounded-xl shadow-md hover:shadow-lg flex items-center justify-center">
-            <img
-              src="../img/gmail.png"
-              alt="Email"
-              class="w-32 h-32 object-contain"
-            />
+            <img src="../img/gmail.png" alt="Email" class="w-32 h-32 object-contain"/>
           </div>
         </a>
       </div>
     </main>
 
-    <!-- Footer -->
     <footer class="border-t border-gray-200 text-gray-500 text-sm text-center py-6">
       <div>© 2025 Gonçalo Silva — Portfólio Fotográfico</div>
     </footer>
   </body>
 </html>
+
