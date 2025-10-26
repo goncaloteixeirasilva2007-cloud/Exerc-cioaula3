@@ -41,50 +41,74 @@
     <main id="works" class="max-w-screen-xl mx-auto px-6 my-16">
       <h2 class="text-center text-2xl font-medium uppercase tracking-widest mb-8">PORTFÓLIO</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Cada imagem ocupa todo o retângulo verticalmente -->
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_2020.jpeg" alt="MENORCA" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_2020.jpeg" alt="MENORCA" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_2035.jpeg" alt="MENORCA" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_2035.jpeg" alt="MENORCA" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_2040.jpeg" alt="MENORCA" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_2040.jpeg" alt="MENORCA" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_2042.jpeg" alt="GRAND CENTRAL TERMINAL NYC" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_2042.jpeg" alt="GRAND CENTRAL TERMINAL NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_5540.jpeg" alt="MENORCA" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_5540.jpeg" alt="MENORCA" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_5574.jpeg" alt="SUMMIT ONE VANDERBILT NYC" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_5574.jpeg" alt="SUMMIT ONE VANDERBILT NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_5660.jpeg" alt="CENTRAL PARK NYC" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_5660.jpeg" alt="CENTRAL PARK NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_5784.jpeg" alt="STATUE OF LIBERTY NYC" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_5784.jpeg" alt="STATUE OF LIBERTY NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_5955.jpeg" alt="DUMBO VIEW NYC" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_5955.jpeg" alt="DUMBO VIEW NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_7556_jpg.jpeg" alt="ZANELE MUHOLI SERRALVES" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_7556_jpg.jpeg" alt="ZANELE MUHOLI SERRALVES" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_7566.jpeg" alt="SERRALVES" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_7566.jpeg" alt="SERRALVES" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_7583.jpeg" alt="SERRALVES" class="w-full h-80 object-cover"/>
+          <img src="img/IMG_7583.jpeg" alt="SERRALVES" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
       </div>
     </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+      <img id="lightbox-img" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg transition-transform duration-300 scale-100" />
+    </div>
 
     <!-- Footer -->
     <footer class="border-t border-gray-200 text-gray-500 text-sm text-center py-6">
       <div>© 2025 Gonçalo Silva — Portfólio Fotográfico</div>
     </footer>
+
+    <!-- Script Lightbox -->
+    <script>
+      const images = document.querySelectorAll("main img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      images.forEach(img => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.classList.remove("hidden");
+          lightbox.classList.add("flex");
+        });
+      });
+
+      lightbox.addEventListener("click", () => {
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+      });
+    </script>
   </body>
 </html>
 
