@@ -97,9 +97,9 @@
       </div>
     </main>
 
-
+    
     <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
-      <img id="lightbox-img" src="" alt="" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg transition-transform duration-300 scale-100" />
+      <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg transition-transform duration-300 scale-100" />
     </div>
 
     <footer class="border-t border-gray-200 text-gray-500 text-sm text-center py-6">
@@ -107,7 +107,7 @@
     </footer>
 
     <script>
-     
+      
       const images = document.querySelectorAll("main img");
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
@@ -125,7 +125,7 @@
         lightbox.classList.remove("flex");
       });
 
-      
+    
       const filterBtns = document.querySelectorAll(".filter-btn");
       const works = document.querySelectorAll("main .grid > div");
 
@@ -145,7 +145,7 @@
         });
       });
 
-      
+    
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if(entry.isIntersecting){
