@@ -51,14 +51,14 @@
     <main id="works" class="max-w-screen-xl mx-auto px-6 my-16">
       <h2 class="text-center text-2xl font-medium uppercase tracking-widest mb-8">PORTFÓLIO</h2>
 
-      <!-- Filtros -->
+     
       <div class="flex justify-center gap-4 mb-8">
         <button class="filter-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" data-filter="all">Todos</button>
         <button class="filter-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" data-filter="paisagem">Paisagem</button>
         <button class="filter-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" data-filter="urbano">Urbano</button>
       </div>
 
-      <!-- Grid de imagens -->
+   
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="paisagem">
           <img src="img/IMG_2020.jpeg" alt="MENORCA" class="w-full h-80 object-cover cursor-pointer"/>
@@ -87,7 +87,7 @@
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="urbano">
           <img src="img/IMG_5955.jpeg" alt="DUMBO VIEW NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="paisagem">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="Todos">
           <img src="img/IMG_7556_jpg.jpeg" alt="SERRALVES" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="paisagem">
@@ -99,9 +99,9 @@
       </div>
     </main>
 
-    <!-- Lightbox -->
+    
     <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
-      <img id="lightbox-img" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg transition-transform duration-300 scale-100" />
+      <img id="lightbox-img" alt="" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg transition-transform duration-300 scale-100" />
     </div>
 
     <footer class="border-t border-gray-200 text-gray-500 text-sm text-center py-6">
@@ -109,7 +109,7 @@
     </footer>
 
     <script>
-      // Lightbox
+     
       const images = document.querySelectorAll("main img");
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
@@ -127,7 +127,6 @@
         lightbox.classList.remove("flex");
       });
 
-      // Filtros
       const filterBtns = document.querySelectorAll(".filter-btn");
       const works = document.querySelectorAll("main .grid > div");
 
@@ -147,7 +146,7 @@
         });
       });
 
-      // Scroll animations
+      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if(entry.isIntersecting){
@@ -163,6 +162,3 @@
     </script>
   </body>
 </html>
-
-
-
