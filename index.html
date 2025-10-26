@@ -14,6 +14,19 @@
         }
       };
     </script>
+    <style>
+     
+      .group img {
+        transition: transform 0.4s ease, filter 0.4s ease;
+      }
+      .group:hover img {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+      }
+      #lightbox-img {
+        transition: transform 0.4s ease, opacity 0.4s ease;
+      }
+    </style>
   </head>
 
   <body class="font-sans text-gray-900 bg-white leading-relaxed">
@@ -28,7 +41,6 @@
       </div>
     </header>
 
-  
     <section class="relative min-h-[520px] flex items-end justify-center bg-cover bg-center border-b border-gray-200"
       style="background-image:url('img/IMG_7738.jpeg'); background-position:center 35%;">
       <div class="max-w-screen-xl mx-auto px-6 py-16 text-center text-white drop-shadow-[0_3px_10px_rgba(0,0,0,0.35)]">
@@ -37,44 +49,50 @@
       </div>
     </section>
 
-   
     <main id="works" class="max-w-screen-xl mx-auto px-6 my-16">
       <h2 class="text-center text-2xl font-medium uppercase tracking-widest mb-8">PORTFÓLIO</h2>
+
+      <div class="flex justify-center gap-4 mb-8">
+        <button class="filter-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" data-filter="all">Todos</button>
+        <button class="filter-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" data-filter="paisagem">Paisagem</button>
+        <button class="filter-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" data-filter="urbano">Urbano</button>
+      </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="paisagem">
           <img src="img/IMG_2020.jpeg" alt="MENORCA" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="paisagem">
           <img src="img/IMG_2035.jpeg" alt="MENORCA" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="paisagem">
           <img src="img/IMG_2040.jpeg" alt="MENORCA" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="urbano">
           <img src="img/IMG_2042.jpeg" alt="GRAND CENTRAL TERMINAL NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="paisagem">
           <img src="img/IMG_5540.jpeg" alt="MENORCA" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="urbano">
           <img src="img/IMG_5574.jpeg" alt="SUMMIT ONE VANDERBILT NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="urbano">
           <img src="img/IMG_5660.jpeg" alt="CENTRAL PARK NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="urbano">
           <img src="img/IMG_5784.jpeg" alt="STATUE OF LIBERTY NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="urbano">
           <img src="img/IMG_5955.jpeg" alt="DUMBO VIEW NYC" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
-          <img src="img/IMG_7556_jpg.jpeg" alt="ZANELE MUHOLI SERRALVES" class="w-full h-80 object-cover cursor-pointer"/>
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="Todos">
+          <img src="img/IMG_7556_jpg.jpeg" alt="SERRALVES" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="paisagem">
           <img src="img/IMG_7566.jpeg" alt="SERRALVES" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
-        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg">
+        <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="paisagem">
           <img src="img/IMG_7583.jpeg" alt="SERRALVES" class="w-full h-80 object-cover cursor-pointer"/>
         </div>
       </div>
@@ -85,13 +103,12 @@
       <img id="lightbox-img" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg transition-transform duration-300 scale-100" />
     </div>
 
-    
     <footer class="border-t border-gray-200 text-gray-500 text-sm text-center py-6">
       <div>© 2025 Gonçalo Silva — Portfólio Fotográfico</div>
     </footer>
 
-   
     <script>
+      
       const images = document.querySelectorAll("main img");
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
@@ -107,6 +124,40 @@
       lightbox.addEventListener("click", () => {
         lightbox.classList.add("hidden");
         lightbox.classList.remove("flex");
+      });
+
+     
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const works = document.querySelectorAll("main .grid > div");
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const filter = btn.dataset.filter;
+
+          works.forEach(work => {
+            if (filter === "all" || work.dataset.category === filter) {
+              work.classList.remove("hidden");
+              work.classList.add("block");
+            } else {
+              work.classList.add("hidden");
+              work.classList.remove("block");
+            }
+          });
+        });
+      });
+
+     
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add("opacity-100", "translate-y-0");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      works.forEach(work => {
+        work.classList.add("opacity-0", "translate-y-10", "transition-all", "duration-700");
+        observer.observe(work);
       });
     </script>
   </body>
