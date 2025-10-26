@@ -57,7 +57,6 @@
         <button class="filter-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" data-filter="urbano">Urbano</button>
       </div>
 
-      
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <div class="group relative overflow-hidden rounded-md bg-gray-100 hover:shadow-lg" data-category="paisagem">
           <img src="img/IMG_2020.jpeg" alt="MENORCA" class="w-full h-80 object-cover cursor-pointer"/>
@@ -98,9 +97,9 @@
       </div>
     </main>
 
-  
+
     <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
-      <img id="lightbox-img" alt="" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg transition-transform duration-300 scale-100" />
+      <img id="lightbox-img" src="" alt="" class="max-w-[90%] max-h-[90%] rounded-lg shadow-lg transition-transform duration-300 scale-100" />
     </div>
 
     <footer class="border-t border-gray-200 text-gray-500 text-sm text-center py-6">
@@ -108,7 +107,7 @@
     </footer>
 
     <script>
-      
+     
       const images = document.querySelectorAll("main img");
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
@@ -126,7 +125,7 @@
         lightbox.classList.remove("flex");
       });
 
-    
+      
       const filterBtns = document.querySelectorAll(".filter-btn");
       const works = document.querySelectorAll("main .grid > div");
 
@@ -146,7 +145,7 @@
         });
       });
 
-
+      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if(entry.isIntersecting){
